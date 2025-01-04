@@ -1,0 +1,61 @@
+1.//Mulitiplication of 2 nos without using *
+
+import java.util.Scanner;
+public class Main
+{
+  public static void main(String args[])
+{
+  Scanner obj=new Scanner(System.in);
+  int sum=0;
+  int num1=obj.nextInt();
+  int num2=obj.nextInt();
+  
+  for(int i=1;i<=num1;i++)
+  sum=sum+num2;
+  System.out.println(sum);
+}
+}
+
+
+2.Fibonacci Series
+
+import java.util.Scanner;
+public class Main{
+  public static void main(String args[])
+  {
+    Scanner sc=new Scanner(System.in);
+    int f=1,s=1,t,count;
+    count=sc.nextInt();
+    System.out.print(f+" "+s);
+    for(int i=1;i<=count;i++)
+    {
+      t=f+s;
+      System.out.print(" "+t);
+      f=s;
+      s=t;
+    }
+  }
+}
+
+3.Perfect cube or not
+import java.util.Scanner;
+public class Main {
+
+    public static void main(String[] args) {
+       Scanner sc=new Scanner(System.in);
+       int n,cube;
+       n=sc.nextInt();
+        for (int i = 1; i <= n; i++) {
+            cube = i * i * i;
+
+            if (cube == n) {
+                System.out.println("Yes");
+                break;
+            } else if (cube > n) {
+                System.out.println("No");
+                break;
+            }
+        }
+      }
+}
+
