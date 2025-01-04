@@ -1,0 +1,214 @@
+1. First program
+
+public class Main
+{
+	public static void main(String[] args) {
+		System.out.println("Hello World");
+	}
+}
+
+2.Declaring integer and display
+public class Main
+{
+	public static void main(String[] args) {
+	    int num=10;
+		System.out.println("My Age is: "+ num);
+	}
+}
+
+3.Declaring two num and add
+public class Main
+{
+	public static void main(String[] args) {
+	    int num1=10,num2=20;
+		System.out.println("The sum of "+num1+" and "+num2+" is : "+(num1+num2));
+	}
+}
+
+4.Getting user input and addition of two integer number
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+	   int num1,num2;
+	   Scanner scanner = new Scanner(System.in);
+	   num1 = scanner.nextInt();
+	   num2 = scanner.nextInt();
+	   System.out.println("The sum of "+num1+" and "+num2+" is : "+(num1+num2));
+	}
+}
+
+5.Getting user input and addition of two float number
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+	   float num1,num2;
+	   Scanner obj = new Scanner(System.in);
+	   num1 = obj.nextFloat();
+	   num2 = obj.nextFloat();
+	   System.out.println("The sum of "+num1+" and "+num2+" is : "+(num1+num2));
+	}
+}
+
+6.Getting user input and addition of two Double number
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+	   double num1,num2;
+	   Scanner obj = new Scanner(System.in);
+	   num1 = obj.nextDouble();
+	   num2 = obj.nextDouble();
+	   System.out.println("The sum of "+num1+" and "+num2+" is : "+(num1+num2));
+	}
+}
+
+7.Getting User name as input and display it
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+	   String name;
+	   Scanner obj = new Scanner(System.in);
+	   
+	   name = obj.next();
+	   System.out.println("My name is : "+name);
+	}
+}
+
+
+8.Getting User message as input and display it
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+	   String msg;
+	   Scanner obj = new Scanner(System.in);
+	   
+	   msg = obj.nextLine();
+	   System.out.println("My name is : "+msg);
+	}
+}
+
+
+9.With Quotation
+public class Main
+{
+	public static void main(String[] args) {
+		System.out.println("Success is when your \"signature\" becomes \"autograph\"");
+	}
+}
+
+10.Accept a character and print its corresponding ASCII value.
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+	   Scanner obj = new Scanner(System.in);
+	   char ch = obj.next().charAt(0);
+	   int num=(int)ch;
+	   System.out.println(num);
+	}
+}
+
+11.Accept a integer and print its corresponding character.
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+	   Scanner obj = new Scanner(System.in);
+	   int num = obj.nextInt();
+	   char ch=(char)num;
+	   System.out.println(num+":"+ch);
+	}
+}
+
+12.Accept a floating point value and print it with 20 width space and round off to 4 decimal places.
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        double inputValue = scanner.nextDouble();
+        System.out.printf("%20.4f\n", inputValue);
+    }
+}
+13.leap year
+import java.util.Scanner;
+public class Main{
+    public static void main(String[] args){
+        int num1;
+        Scanner scanner = new Scanner(System.in);
+        num1=scanner.nextInt();
+        if(num1%400==0)
+        System.out.println("Leap Year");
+        else if(num1%100==0)
+        System.out.println("Not Leap Year");
+        else if(num1%4==0)
+        System.out.println("leap year");
+        else
+        System.out.println("not leap year");
+    }
+        
+    } 
+13.Input Format:
+Accept one floating point  and one integer value
+Output Format:
+print the floating point value according to the given precision
+Sample Input :
+15.87 6
+Sample Output :
+15.870000
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        double Value = scanner.nextDouble();
+        int precision = scanner.nextInt();
+        String formatString = "%." + precision + "f";
+        System.out.printf(formatString, Value);
+    }
+}
+
+
+14.Accept float input and display round off value
+I/p:15.9
+O/p:16
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        double inputValue = scanner.nextDouble();
+        long input = Math.round(inputValue);
+        System.out.println(input);
+    }
+}
+
+15.String to char
+import java.util.Arrays;  
+  
+public class chartostring {  
+  
+    public static void main(String[] args) {  
+  
+        String str=“SelviMathi";  
+        char[] ch=str.toCharArray();  
+  
+        System.out.println("String: "+str);  
+        System.out.println("char: "+Arrays.toString(ch));  
+  
+    }  
+      
+}  
+
+16.Accept a float value as input and print the same in its exponential form
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        float input = scanner.nextFloat();
+        System.out.printf("%e", input);
+        
+    }
