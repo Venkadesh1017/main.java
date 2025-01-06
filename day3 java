@@ -545,3 +545,27 @@ public class Main
         
     }
 }
+8.count the odd and even number for given number
+import java.util.Scanner;
+public class Main
+{
+   public static void main (String[] args) {
+       Scanner a=new Scanner(System.in);
+       int size=a.nextInt();
+       int arr[]=new int[size];
+       int even=0,odd=0;
+       for(int index=0;index<size;index++)
+       arr[index]=a.nextInt();
+           for(int index=0;index<size;index++){
+               if(arr[index]%2==0)
+             even++;//  System.out.print(""+even);
+               else
+             //  System.out.print(""even)
+               odd++;
+               //even++;
+           }
+           System.out.print("even no:"+even+"odd no:"+odd);
+       
+         
+    }
+}
