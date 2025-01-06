@@ -16,3 +16,19 @@ public class Main
        }
     }
 }
+
+2.Factorial of given number
+import java.util.Scanner;
+public class Main
+{
+   public static void main (String[] args) {
+       Scanner sc=new Scanner(System.in);
+       int num=sc.nextInt();
+       int fact;
+      for(fact=1;num>=1;num--)
+           fact=fact*num;
+       System.out.print(fact);
+       
+        
+    }
+}
