@@ -1,0 +1,150 @@
+****************INHERITANCE**************
+
+1.Single Inheritance
+
+class Grandfather{
+    void silver()
+    {
+        System.out.println("Silver");
+    }
+
+}
+class Father extends Grandfather{
+    void gold()
+    {
+        System.out.println("Gold");
+    }
+
+}
+public class Main
+{
+	public static void main(String[] args) {
+	Grandfather father=new Grandfather();
+	    father.silver();
+	    father.gold();
+	}
+}
+
+
+2.Multilevel inheritance
+
+class Grandfather{
+    void silver()
+    {
+        System.out.println("Silver");
+    }
+
+}
+class Father extends Grandfather{
+    void gold()
+    {
+        System.out.println("Gold");
+    }
+
+}
+class Son extends Father {
+    void diamond()
+    {
+        System.out.println("Diamond");
+    }
+
+}
+public class Main
+{
+	public static void main(String[] args) {
+	Son son=new Son();
+	    son.silver();
+	    son.gold();
+	    son.diamond();
+	}
+}
+
+3.Hieraricical Inheritance
+
+class Grandfather{
+    void silver()
+    {
+        System.out.println("Silver");
+    }
+
+}
+class Father extends Grandfather{
+    void gold()
+    {
+        System.out.println("Gold");
+    }
+
+}
+class Aunt extends Grandfather {
+    void love()
+    {
+        System.out.println("Love");
+    }
+
+}
+public class Main
+{
+	public static void main(String[] args) {
+	Aunt aunt=new Aunt();
+	    aunt.silver();
+	    aunt.love();
+	    Father father =new Father();
+	    father.silver();
+	    father.gold();
+	    
+	}
+}
+
+
+*************POLYMORPHISM********************
+function overloading
+class add
+{
+    void intadd(int a,int b)
+    {
+        System.out.println(a+b);
+    }
+    void intadd(int a,int b,int c)
+    {
+         System.out.println(a+b+c);
+    }
+}
+public class Main
+{
+	public static void main(String[] args) {
+	add ob=new add();
+	ob.intadd(10,20);
+	ob.intadd(10,20,30);
+	}
+}
+
+
+Function overriding
+
+class base
+{
+    void intadd(int a, int b)
+    {
+        System.out.println("Base: " + (a + b));
+    }
+}
+
+class child extends base
+{
+    @Override
+    void intadd(int a, int b)
+    {
+        System.out.println("Child: " + (a + b));
+    }
+}
+
+public class Main
+{
+    public static void main(String[] args) {
+        base ob1 = new base();
+        ob1.intadd(10, 20);
+
+        base ob2 = new child();
+        ob2.intadd(10, 20);
+    }
+}
