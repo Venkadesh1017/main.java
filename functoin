@@ -1,0 +1,263 @@
+Function types:
+1.Predefined
+
+
+
+2.User defined
+4 types
+1.Without Argument without Return type
+void fun_name()
+{
+}
+public class Main {
+    public  void greet()
+    {
+       System.out.println("Good Afternoon"); 
+    }
+    public static void main(String[] args) {
+            System.out.println("Hello");
+            Main ob=new Main();
+            ob.greet();
+        
+    }
+}
+
+2.Without Argument with Return type
+int fun_name()
+{
+}
+
+public class Main {
+  char display()
+    {
+             return 'a';
+    }
+    public static void main(String[] args) {
+            System.out.println("Hello");
+            Main ob=new Main();
+           System.out.println(ob.display());
+        
+    }
+}
+
+3.With Argument Without Return type
+void fun_name(parameter)
+{
+}
+
+public class Main {
+  void display(int ch)
+    {
+        System.out.println(ch);
+             
+    }
+    public static void main(String[] args) {
+            System.out.println("Hello");
+            Main ob=new Main();
+            int c=100;
+           ob.display(c);
+        
+    }
+}
+
+4.With Argument with return type
+int fun_name(Parameter)
+{
+}
+public class Main {
+  int add(int x,int y)
+    {
+       return (x+y);
+             
+    }
+    int sub(int x,int y)
+    {
+       return (x-y);
+             
+    }
+    public static void main(String[] args) {
+            System.out.println("Hello");
+            Main ob=new Main();
+           System.out.println(ob.add(10,20));
+           System.out.println(ob.sub(50,30));
+           System.out.println(ob.add(20,49));
+           System.out.println(ob.sub(60,3));
+        
+    }
+}
+
+
+
+
+Overloading-Same function name with differnt parameters
+public class Main {
+  int add(int x,int y)
+    {
+       return (x+y);
+             
+    }
+    int add(int x,int y,int z)
+    {
+       return (x+y+z);
+             
+    }
+    public static void main(String[] args) {
+            Main ob=new Main();
+           System.out.println(ob.add(10,20,30));
+           System.out.println(ob.add(20,49));
+           
+        
+    }
+}
+
+Overriding-Same function with Same parameters
+
+1. Addition of two number using function
+
+
+public class Main {
+   int add(int x,int y)
+    {
+       return (x+y);
+             
+    }
+        public static void main(String[] args) {
+            Main ob=new Main();
+           
+           System.out.println(ob.add(20,49));
+           System.out.println(ob.add(20,40));
+    }
+}
+
+
+2. Fact of number using function
+
+import java.util.Scanner;
+public class Main {
+   void factorial(int n)
+   {
+       int fact=1;
+        for(int i=1;i<=n;i++)
+        fact=fact*i;
+        System.out.println(fact);
+   }
+        public static void main(String[] args) {
+           Scanner oj=new Scanner (System.in);
+           int limit=oj.nextInt();
+           Main ob=new Main();
+           ob.factorial(limit);
+           
+    }
+}
+
+
+
+Recursive function
+
+*****************DIRECT RECURSION
+1.TAIL Recursion
+
+class Main { 
+static void fun(int n) 
+{ 
+	if (n > 0) 
+	{ 
+	System.out.print(n + " "); 
+	fun(n - 1); 
+	} 
+} 
+public static void main(String[] args) 
+{ 
+	int x = 3; 
+	fun(x); 
+} 
+} 
+
+2.HEAD Recursion
+// Java program showing Head Recursion 
+import java.io.*; 
+
+class Main{ 
+static void fun(int n) 
+{ 
+	if (n > 0) { 
+		fun(n - 1); 
+		System.out.print(" "+ n); 
+	} 
+} 
+
+public static void main(String[] args) 
+{ 
+	int x = 3; 
+	fun(x); 
+	
+} 
+} 
+
+3.TREE Recursion
+class Main
+{ 
+static void fun(int n) 
+{ 
+	if (n > 0) { 
+		System.out.print(" "+ n); 
+		fun(n - 1); 
+		fun(n - 1); 
+	} 
+} 
+public static void main(String[] args) 
+{ 
+	fun(3); 
+	} 
+} 
+
+4.NESTED Recursion
+import java.util.*; 
+
+class Main { 
+static int fun(int n) 
+{ 
+	if (n > 100) 
+		return n - 10; 
+	return fun(fun(n + 11)); 
+} 
+
+public static void main(String args[]) 
+{ 
+	int r; 
+	r = fun(95); 
+	System.out.print(" "+ r); 
+	
+} 
+} 
+
+*****************INDIRECT RECURSION
+
+
+
+public class Main
+{
+	public static int MECH(int a1)
+	{
+	    if(a1==0)
+	    return 0;
+	    
+	    System.out.println("MECH:"+a1);
+	    IT(a1-1);
+	    return 0;
+	}
+	
+	
+	public static int IT(int a)
+	{
+	    if(a==0)
+	    return 0;
+	    System.out.println("IT:"+a);
+	    MECH(a-1);
+	    return 0;
+	}
+	public static void main(String[] args) 
+	{
+	 	  MECH(5);	
+	}
+}
