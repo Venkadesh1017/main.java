@@ -1,0 +1,262 @@
+1. Display an array from left to right
+import java.util.Arrays;
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int size = sc.nextInt();
+        int[] arr= new int[size];
+        for(int index=0;index<size;index++)
+                arr[index]=sc.nextInt();
+        System.out.print(Arrays.toString(arr));
+    }
+}
+2. Reverse  an array
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int size = sc.nextInt();
+        int[] arr= new int[size];
+        for(int index=0;index<size;index++)
+                arr[index]=sc.nextInt();
+                
+        for(int index=size-1;index>=0;index--)
+                System.out.print(arr[index]+" ");
+    }
+}
+3. Count zeroes and ones
+
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int size = sc.nextInt();
+        int[] arr= new int[size];
+        int zero=0,one=0;
+        for(int index=0;index<size;index++)
+                arr[index]=sc.nextInt();
+                
+        for(int index=0;index<size;index++)
+             {
+                 if(arr[index]==0)
+                 zero++;
+                 else
+                 one++;
+             }   
+                
+        System.out.print("Zero's: "+zero+"\nOne's: "+one);
+    }
+}
+4. Count even and odd
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int size = sc.nextInt();
+        int[] arr= new int[size];
+        int even=0,odd=0;
+        for(int index=0;index<size;index++)
+                arr[index]=sc.nextInt();
+                
+        for(int index=0;index<size;index++)
+             {
+                 if(arr[index]%2==0)
+                 even++;
+                 else
+                 odd++;
+             }   
+                
+        System.out.print("EVEN: "+even+"\nODD: "+odd);
+    }
+}
+5.Swap the two values in Array
+import  java.util.Scanner;
+class Main{
+  public static void main(String args[])
+  {
+    Scanner sc=new Scanner(System.in);
+    int size=sc.nextInt();
+    int arr[]=new int[size];
+    for(int ind=0;ind<size;ind++)
+    arr[ind]=sc.nextInt();
+    
+    int pos1=sc.nextInt();
+    int pos2=sc.nextInt();
+    
+    if(pos1<=0 ||pos2<=0 ||pos1>=size || pos2>=size)
+    System.out.println("Invalid");
+    else
+    {
+    int temp;
+    temp=arr[pos1];
+    arr[pos1]=arr[pos2];
+    arr[pos2]=temp;
+    for(int ind=0;ind<size;ind++)
+    System.out.print(arr[ind]+" ");
+    }
+  }
+}
+
+6.Sum of array elements
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner vs=new Scanner(System.in);
+	    int size=vs.nextInt();
+	    int arr[]=new int[size];
+	    int sum=0;
+	    for(int i=0;i<size;i++)
+	   { 
+	       arr[i]=vs.nextInt();
+	        sum+=arr[i];
+	   }
+	      System.out.println(sum);
+	  }
+}
+7.Replace every elements with sum of other elements using function
+
+import java.util.*;
+class Main
+{
+  static void replace_elements(int arr[], int size)
+  {
+    int sum=0;
+    for(int ind=0;ind<size;ind++)
+    sum+=arr[ind];
+    for(int ind=0;ind<size;ind++)
+    arr[ind]=sum-arr[ind];
+    
+  }
+  public static void main(String[] args)
+  {
+    int ind,size;
+    Scanner sc = new Scanner(System.in);
+    size = sc.nextInt();
+    int[] arr = new int[size];
+    for(ind=0;ind<size;ind++)
+    {
+      arr[ind]=sc.nextInt();
+    }
+    replace_elements(arr,size);
+    for(ind=0;ind<size;ind++)
+    System.out.print(arr[ind]+" ");
+  }
+}
+8.Replace each element with right elements sum
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner vs=new Scanner(System.in);
+	    int size=vs.nextInt();
+	    int arr[]=new int[size];
+	    int sum=0,i;
+	    for(i=0;i<size;i++)
+	   { 
+	       arr[i]=vs.nextInt();
+	        sum+=arr[i];
+	   }
+	   for(i=0;i<size;i++)
+	   {
+	   arr[i]=sum-arr[i];
+	   sum=arr[i];
+	   System.out.println(arr[i]);
+	   } 
+}
+}
+
+9.Replace each element with left elements sum
+
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner vs=new Scanner(System.in);
+	    int size=vs.nextInt();
+	    int arr[]=new int[size];
+	    int sum=0,i;
+	    for(i=0;i<size;i++)
+	   { 
+	       arr[i]=vs.nextInt();
+	        sum+=arr[i];
+	   }
+	   for(i=size-1;i>=0;i--)
+	   {
+	   arr[i]=sum-arr[i];
+	   sum=arr[i];
+	   }
+	    for(i=0;i<size;i++)
+	  	    System.out.print(arr[i]+" ");
+	  	}
+}
+10.Reverse an original array
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner vs=new Scanner(System.in);
+	    int size=vs.nextInt();
+	    int arr[]=new int[size];
+	    
+	    for(int i=0;i<size;i++)
+	       arr[i]=vs.nextInt();
+	       
+	   for(int start=0,end=size-1;start<end;start++,end--)
+	   {
+	       int temp=arr[start];
+	       arr[start]=arr[end];
+	       arr[end]=temp;
+	   }
+	    
+	    for(int i=0;i<size;i++)
+	  	    System.out.print(arr[i]+" ");
+		}
+}
+
+11.Largest of array element
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner vs=new Scanner(System.in);
+	    int size=vs.nextInt();
+	    int arr[]=new int[size];
+	    
+	    for(int i=0;i<size;i++)
+	       arr[i]=vs.nextInt();
+	       
+	       int max=arr[0];
+	   
+	    for(int i=0;i<size;i++)
+	  	   {
+	  	       if(max<arr[i])
+	  	       max=arr[i];
+	  	   }
+	  	    System.out.print(max);
+	}
+}
+
+12.Smallest of array element
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner vs=new Scanner(System.in);
+	    int size=vs.nextInt();
+	    int arr[]=new int[size];
+	    
+	    for(int i=0;i<size;i++)
+	       arr[i]=vs.nextInt();
+	       
+	       int min=arr[0];
+	   
+	    for(int i=0;i<size;i++)
+	  	   {
+	  	       if(min>arr[i])
+	  	       min=arr[i];
+	  	   }
+	  	    System.out.print(min);
+	}
+}
