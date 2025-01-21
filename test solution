@@ -59,3 +59,335 @@ public class Main {
       }
 }
 
+***************Day2*********************
+
+
+1.//Mulitiplication of 2 nos without using *
+
+import java.util.Scanner;
+public class Main
+{
+  public static void main(String args[])
+{
+  Scanner obj=new Scanner(System.in);
+  int sum=0;
+  int num1=obj.nextInt();
+  int num2=obj.nextInt();
+  
+  for(int i=1;i<=num1;i++)
+  sum=sum+num2;
+  System.out.println(sum);
+}
+}
+
+
+2.Fibonacci Series
+
+import java.util.Scanner;
+public class Main{
+  public static void main(String args[])
+  {
+    Scanner sc=new Scanner(System.in);
+    int f=1,s=1,t,count;
+    count=sc.nextInt();
+    System.out.print(f+" "+s);
+    for(int i=1;i<=count;i++)
+    {
+      t=f+s;
+      System.out.print(" "+t);
+      f=s;
+      s=t;
+    }
+  }
+}
+
+3.Perfect cube or not
+import java.util.Scanner;
+public class Main {
+
+    public static void main(String[] args) {
+       Scanner sc=new Scanner(System.in);
+       int n,cube;
+       n=sc.nextInt();
+        for (int i = 1; i <= n; i++) {
+            cube = i * i * i;
+
+            if (cube == n) {
+                System.out.println("Yes");
+                break;
+            } else if (cube > n) {
+                System.out.println("No");
+                break;
+            }
+        }
+      }
+}
+
+***************Day 3*********************
+
+1.Sum of the digits
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner sc=new Scanner(System.in);
+	    int num=sc.nextInt();
+	    int sum=0,digit;
+	    while(num>0)
+	    {
+	        digit=num%10;
+	        sum+=digit;
+	        num/=10;
+	    }
+	   	   System.out.println(sum);
+	        
+	   
+	}
+}
+
+
+2.Palindrome or not
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner sc=new Scanner(System.in);
+	    int num=sc.nextInt();
+	    int sum=0,digit;
+	    int palin=num;
+	    while(palin>0)
+	    {
+	        digit=palin%10;
+	        sum=(sum*10)+digit;
+	        palin/=10;
+	    }
+	   	   
+	   	   if(num==sum)
+	   	   System.out.println(num +" is a Palindrome");
+	   	   else
+	        System.out.println(num + " is not a Palindrome");
+	   
+	}
+}
+
+3.Equilateral triangle
+
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner sc=new Scanner(System.in);
+	    int limit=sc.nextInt();
+	   for(int row=1;row<=limit;row++)
+	   {
+	   for(int col=1;col<=limit-row;col++)
+	   System.out.print("  ");
+	   for(int col=1;col<=(2*row)-1;col++)
+	   System.out.print("* ");
+	    
+	   System.out.println();
+	   }
+	}
+}
+
+VSB Array
+Janu wants to write a Java program to print the number of occurrences of a particular prime number from the list of all prime factors of every number between the given limits. Create a function named "countFactors" and "getCount" and implement the following program.
+
+Suppose the given limits are 2 and 8.
+The numbers between this limit are
+2
+3
+4
+5
+6
+7
+8
+
+The list of all prime factors of the above numbers are
+2
+3
+2,2
+5
+2,3
+7
+2,2,2
+
+Now if the particular prime number is 3 then you should print the number of occurrences as 2
+Input Format 
+The first line will contain the left limit, L.
+The second line will contain the right limit, R.
+Then the following line has the prime number, P.
+Output Format 
+The output display the count of occurrences of a prime number in the prime factorization of every element from the given range.
+Constraints 
+1 <= L <= 200
+L <= R <= 200
+L <= P <= R
+Sample Input Sample Output 
+2
+8
+3
+2
+Sample Input Sample Output 
+22
+45
+5
+6
+
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static int countFactors(int s, int e, int p) {
+        int count = 0;
+        for (int num = s; num <= e; num++) {
+            if (num > 1) {
+                int[] primeFactors = getPrimeFactors(num);
+                for (int factor : primeFactors) {
+                    if (factor == p) {
+                        count++;
+                    }
+                }
+            }
+        }
+        return count;
+    }
+
+    public static int[] getPrimeFactors(int num) {
+        int temp[] = new int[num];
+        int index = 0;
+        for (int i = 2; i <= num; i++) {
+            while (num % i == 0) {
+                temp[index++] = i;
+                num /= i;
+            }
+        }
+        int primeFactors[] = new int[index];
+        System.arraycopy(temp, 0, primeFactors, 0, index);
+        return primeFactors;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int start = sc.nextInt();
+        int end = sc.nextInt();
+        int prime = sc.nextInt(); 
+            System.out.println( countFactors(start, end, prime));
+    }
+}
+
+
+**************************STRING******************
+1.Replace vowel with space
+
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner sc=new Scanner(System.in);
+	    String nam=sc.nextLine();
+	   String name= nam.toLowerCase();
+	     int length=name.length();
+	     int count=0;
+	     char charr[]= name.toCharArray();
+	     for(int i=0;i<length;i++)
+	     {
+	     char c=charr[i];
+	         if(c=='a'||c=='e'||c=='i'||c=='o'||c=='u')
+	         charr[i]=' ';
+		 }
+		 String replcname=new String(charr);
+		 System.out.println(replcname);
+	    
+	}
+}
+
+2.Count the vowel in given sentence
+
+
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner sc=new Scanner(System.in);
+	    String nam=sc.nextLine();
+	   String name= nam.toLowerCase();
+	     int length=name.length();
+	     int count=0;
+	     for(int i=0;i<length;i++)
+	     {
+	     char c=name.charAt(i);
+	    if(c=='a'||c=='e'||c=='i'||c=='o'||c=='u')
+	    count++;
+		 }
+		 System.out.println(count);
+	    
+	}
+}
+
+3.String reverse
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner sc=new Scanner(System.in);
+	    String nam=sc.nextLine();
+	   String name= nam.toLowerCase();
+	     int length=name.length();
+	    String rev=" ";
+	     for(int i=0;i<length;i++)
+	     {
+	     char c=name.charAt(i);
+	    rev=c+rev;
+		 }
+		 System.out.println(rev);
+	    
+	}
+}
+
+4.Palindrome string or not
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner sc=new Scanner(System.in);
+	    String nam=sc.nextLine();
+	   String name= nam.toLowerCase();
+	     int length=name.length();
+	    String rev="";
+	     for(int i=0;i<length;i++)
+	     {
+	     char c=name.charAt(i);
+	    rev=c+rev;
+		 }
+		 if(name.equals(rev))
+		 System.out.println("palindrome");
+		 else
+		 System.out.println("not palindrome");
+	    
+	}
+}
+
+5.Write a program to convert the digits in the string into a single number
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String str = sc.nextLine();
+        String number = "";
+        
+        for (int i = 0; i < str.length(); i++) {
+            char c = str.charAt(i);
+            if (Character.isDigit(c)) {
+                number += c;
+            }
+        }
+        
+        if (!number.isEmpty()) 
+                    System.out.println(Integer.parseInt(number));
+        
+    }
+}
