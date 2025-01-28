@@ -213,3 +213,138 @@ public class Main {
         }
     }
 }
+
+1.input=5
+12345
+12345
+12345
+12345
+12345
+
+import java.util.*;
+class Main{
+    public static void main(String args[]){
+    Scanner sc=new Scanner(System.in);
+    int n=sc.nextInt();
+    for(int row=1;row<=n;row++,System.out.println()){
+        for(int col=1;col<=n;col++)
+        System.out.print(col);
+    }
+}
+}
+2.input=5
+
+ABCDE
+ABCDE
+ABCDE
+ABCDE
+ABCDE
+import java.util.*;
+class Main{
+    public static void main(String args[]){
+    Scanner sc=new Scanner(System.in);
+    int n=sc.nextInt();
+    for(int row=1;row<=n;row++,System.out.println())
+    {
+        char ch=65;
+        for(int col=1;col<=n;col++)
+        System.out.print(ch++);
+        
+    }
+}
+}
+3.input=5
+ABCDE
+FGHIJ
+KLMNO
+PQRST
+UVWXY
+import java.util.*;
+class Main{
+    public static void main(String args[]){
+    Scanner sc=new Scanner(System.in);
+    int n=sc.nextInt();
+    char ch=65;
+    for(int row=1;row<=n;row++,System.out.println())
+    {
+        
+        for(int col=1;col<=n;col++)
+        System.out.print(ch++);
+        
+    }
+}
+}
+4.input=5
+*****
+*   *
+*   *
+*   *
+*****
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+	    int num=sc.nextInt();
+	    for(int row=1;row<=num;row++,System.out.println())
+	    {
+	        for(int col=1;col<=num;col++)
+	        {
+	            if(row==1||row==num||col==1||col==num)
+	            System.out.print("*");
+	            else
+	            System.out.print(" ");
+	         }
+	    }
+	}
+}
+
+5.input=5
+*
+* *
+*   *
+*      *
+* * * * *
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+	    int num=sc.nextInt();
+	    for(int row=1;row<=num;row++,System.out.println())
+	    {
+	        for(int col=1;col<=num;col++)
+	        {
+	            if(row==col||row==num||col==1)
+	            System.out.print("*");
+	            else
+	            System.out.print(" ");
+	         }
+	    }
+	}
+}
+6.input=5
+*   *
+ * *
+  *
+ * *
+*   *
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+	    int num=sc.nextInt();
+	    for(int row=1;row<=num;row++,System.out.println())
+	    {
+	        for(int col=1;col<=num;col++)
+	        {
+	            if(row==col||row+col==num+1)
+	            System.out.print("*");
+	            else
+	            System.out.print(" ");
+	         }
+	    }
+	}
+}
