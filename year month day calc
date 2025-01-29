@@ -1,0 +1,14 @@
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+     Scanner a = new Scanner(System.in);
+    int n=a.nextInt();
+    int year=n/365;
+    int month=(n%365)/30;
+    int day=(n%365)%30;
+    System.out.println("Year :"+year);
+     System.out.println("Month:"+month);
+      System.out.println("Day:"+day);
+  }
+}
