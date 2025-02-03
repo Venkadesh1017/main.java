@@ -1,0 +1,19 @@
+count the number
+
+import java.util.*;
+public class Main{
+    public static void main(String args[]){
+        Scanner a = new Scanner(System.in);
+        int size = a.nextInt();
+          int num[]=new int[size];
+        for(int i=0;i<size;i++)
+          num[i]=a.nextInt();
+          int key=a.nextInt();
+           int count=0;
+            for(int i=0;i<size;i++)
+            if(num[i]>key)
+            count++;
+            System.out.print(count);
+        
+    }
+}
