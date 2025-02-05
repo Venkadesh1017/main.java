@@ -17,3 +17,30 @@ public class Main{
         
     }
 }
+
+
+found the array value is true and not found  the value is -1 
+
+import java.util.*;
+public class Main{
+    public static void main(String args[]){
+        Scanner a = new Scanner(System.in);
+        int size=a.nextInt();
+        int num[]= new int[size];
+       for(int i=0;i<size;i++)
+         num[i]=a.nextInt();
+        int search=a.nextInt();
+       boolean found=false;
+       for(int i=0;i<size;i++){
+           if(num[i]==search){
+               System.out.println(i);
+               found=true;
+               break;
+           }
+       }
+       if(!found){
+           System.out.println("-1");
+       }
+    
+    }
+}
