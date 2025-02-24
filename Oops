@@ -148,3 +148,45 @@ public class Main
         ob2.intadd(10, 20);
     }
 }
+
+
+Constructor:
+
+Example:
+class exam
+{
+    exam()
+    {
+        System.out.println("HI");
+    }
+    
+}
+
+public class Main
+{
+	public static void main(String[] args) {
+	    exam ob1=new exam();
+	}
+}
+******constructor with parametrised***********
+class exam
+{
+    exam()
+    {
+        System.out.println("HI");
+    }
+    exam(int x)
+    {
+        System.out.println(x);
+    }
+}
+
+public class Main
+{
+	public static void main(String[] args) {
+	    exam ob=new exam(100);
+	   exam ob1=new exam();
+	    
+		
+	}
+}
