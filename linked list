@@ -232,3 +232,203 @@ Sum of all node
 Remove duplicates in sorted list
 
 check loop?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+LINKED LIST:
+1.Insert-beg,end,atpos
+2.Count
+3.Sum
+4.Search
+5.Max
+6.Delete
+7.Check if sorted or not
+8.Remove duplicates
+9.Reverse
+10.Merge 2 linkedlist
+
+
+
+class LinkedList {
+    Node start;
+    class Node {
+        int data;
+        Node next;
+        Node(int num) {
+            data = num;
+            next = null;
+        }
+    }
+public void insertBeginning(int data) {
+    Node newNode = new Node(data);//Creating newnode
+    newNode.next = start;
+    start = newNode;
+    }
+
+public void insertEnd(int data) {
+Node newNode = new Node(data);//Creating newnode
+    if(start==null){
+    start=newNode;
+    return;
+    }
+    Node tptr=start;//traversal pointer pointing to start node
+    while(tptr.next!=null){
+    tptr=tptr.next;//increment the traversal pointer
+    }
+    tptr.next=newNode;//connecting newnode with end node
+    }
+
+public void insertAfter(int pos,int data) throws Exception {
+    Node newNode = new Node(data);//Creating newnode
+    int size = calcSize();
+    if(pos<0 || pos>size)
+    throw new Exception("Access denied for given position");
+    if(pos==1){
+    insertBeginning(data);
+    return;
+    }
+    Node tptr=start;
+    for(int i=1;i<pos-1;i++){
+    tptr=tptr.next;
+    }
+    newNode.next=tptr.next;
+    tptr.next=newNode;
+}
+public int calcSize(){
+        int size = 0;
+        Node node=start;
+        while(node!=null){
+            node = node.next;
+            size++;
+        }
+        return size;
+  }
+public void removeduplicates(){
+        Node tpr = start;
+        while(tpr != null && tpr.next != null){
+            if(tpr.data == tpr.next.data)
+                tpr.next=tpr.next.next;
+            else
+                tpr = tpr.next;
+        
+            }
+        }
+public int MaxofNodes(){
+        Node tptr = start;
+        int max = 0;
+        while(tptr != null){
+            if(tptr.data > max){
+                max = tptr.data;
+            }
+            tptr = tptr.next;
+        }
+        return max;
+    }
+public boolean search(int key){
+        Node tptr = start;
+        while(tptr != null){
+            if(tptr.data == key){
+                return true;
+            }
+            tptr = tptr.next;
+        }
+        return false;
+    }
+public boolean isSorted() {
+    if (start == null || start.next == null) {
+        return true;
+    }
+
+    Node temp = start;
+    while (temp.next != null) { 
+        if (temp.data > temp.next.data) {
+            return false;
+        }
+        temp = temp.next;
+    }
+    return true;
+}
+
+    public void deleteBeginning() {
+        if(start==null){
+            System.out.println("List is empty");
+            return;
+        }
+        start=start.next;
+    }
+    public void deleteEnd() {
+        if(start==null){
+            System.out.println("List is empty");
+            return;
+        }
+        if(start.next==null){
+            start=null;
+            return;
+        }
+        Node tptr=start;
+        while(tptr.next.next!=null){
+            tptr=tptr.next;
+        }
+        tptr.next=null;
+    }
+    public void deleteAfter(int pos) throws Exception {
+        int size = calcSize();
+        if(pos<0 || pos>size)
+            throw new Exception("Access denied for given position");
+        if(pos==1){
+            deleteBeginning();
+            return;
+        }
+        Node tptr=start;
+        for(int i=1;i<pos-1;i++){
+            tptr=tptr.next;
+        }
+        tptr.next=tptr.next.next;
+    }
+
+public void displayLL() {
+        Node tptr = start;
+        while (tptr != null) {
+            System.out.print(tptr.data + "->");
+            tptr = tptr.next;
+        }
+        System.out.println("NULL\n");
+    }
+}
+
+public class Main {
+    public static void main(String args[])throws Exception {
+        LinkedList obj = new LinkedList();
+try{
+        obj.insertBeginning(10);
+        obj.insertBeginning(20);
+        obj.insertBeginning(30);
+
+        obj.displayLL();
+        obj.insertEnd(5);
+        obj.displayLL();
+        obj.insertAfter(3,100);
+        obj.displayLL();
+        System.out.println("Deletion operation.....");
+        obj.deleteBeginning();
+        obj.deleteEnd();
+        obj.deleteAfter(2);
+        obj.displayLL();
+}
+catch(Exception e) {
+    System.out.println(e.getMessage());
+} 
+    }
+}
+
